@@ -1,0 +1,242 @@
+.img-white {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  img {
+    object-fit: cover;
+    width: 100%;
+  }
+}
+.products {
+  width: 100%;
+  background: $color-lavender;
+  position: relative;
+  text-align: center;
+
+  // margin-top: 5rem;
+  .card {
+    // height: 100%;
+    z-index: 99;
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: grid;
+    // flex-direction: column;
+    grid-template-rows: 0.55fr 0.5fr;
+    &:hover {
+      box-shadow: 0px 25px 20px -20px rgba(0, 0, 0, 0.25);
+    }
+    .card-body {
+      // flex-shrink: 1;
+      padding: 2rem 2rem 2rem 2rem;
+      h6 {
+        @include styleText($fs-1, $fw-2, $color-pink);
+      }
+      h1 {
+        @include styleText($fs-3, $fw-4, $color-1);
+        padding-bottom: $pd-1 0 $pd-6 0;
+      }
+      p {
+        padding-top: 1rem;
+        line-height: 2.5rem;
+        @include styleText($fs-2, $fw-1, $color-2);
+      }
+    }
+    .card-img {
+      height: 17rem;
+      img {
+        background-position: center;
+        object-fit: cover;
+        height: 100%;
+      }
+    }
+  }
+}
+
+///form
+.modal-body {
+  z-index: 1;
+  h2 {
+    text-align: center;
+  }
+}
+.find-course {
+  .coures-item {
+    padding-top: 10rem;
+    display: flex;
+    justify-content: center;
+    form {
+      width: 40rem;
+      border-radius: 1.5rem;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+      padding: 2rem;
+      .name {
+        position: relative;
+        label {
+          i {
+            position: absolute;
+            top: 0;
+          }
+        }
+      }
+
+      .title-contact {
+        margin-bottom: 5rem;
+        @include styleText($fs-5, $fw-4, $color-1);
+      }
+      .btContactName {
+        position: relative;
+        .icon_name {
+          @extend .icon-socials;
+          &::before {
+            content: "\f007";
+            font-family: fontawesome;
+            font-size: inherit;
+          }
+          .sp-thongbao {
+            font-size: 2rem;
+          }
+        }
+        .name-item {
+          input {
+            font-weight: $fw-1;
+            outline: none;
+            width: 100%;
+            border-radius: 50rem;
+            padding: 2rem;
+            font-size: 1.3rem;
+
+            // text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+.btContactEmail {
+  position: relative;
+  .icon_email {
+    @extend .icon-socials;
+    &::before {
+      content: "\f0e0";
+      font-family: fontawesome;
+      font-size: inherit;
+    }
+    .sp-thongbao {
+      font-size: 2rem;
+    }
+  }
+  .name-item {
+    input {
+      font-weight: $fw-1;
+      outline: none;
+      width: 100%;
+      border-radius: 50rem;
+      padding: 2rem;
+      font-size: 1.3rem;
+
+      // text-align: center;
+    }
+  }
+}
+.btContactEducation {
+  flex: 1 0 100%;
+  max-width: 100%;
+  position: relative;
+  z-index: 9;
+  .icon_education {
+    @extend .icon-socials;
+    &::before {
+      content: "\f19d";
+      font-family: fontawesome;
+      font-size: inherit;
+    }
+    .languages-item {
+      height: 100%;
+      height: 5rem !important;
+      font-weight: $fw-1;
+      outline: none;
+      width: 100%;
+      border-radius: 50rem;
+
+      font-size: 1.3rem;
+    }
+    .name-item {
+      height: 500rem;
+    }
+  }
+}
+.btContactMessage {
+  flex: 1 0 100%;
+  max-width: 100%;
+  position: relative;
+  z-index: 9;
+  .icon_desc {
+    @extend .icon-socials;
+    &::before {
+      content: "\f27a";
+      font-family: fontawesome;
+      font-size: inherit;
+    }
+  }
+}
+.form-control1 {
+  text-align: left;
+  border-radius: 50rem;
+  padding: 0.3rem 3rem 0.3rem 3.75rem !important;
+  height: 4rem !important;
+  font-size: 1.3rem;
+  margin: 0.5rem 0;
+}
+.form-control2 {
+  text-align: left;
+  border-radius: 1rem !important;
+  padding: 0.3rem 3rem 0.3rem 3.75rem !important;
+  height: 10rem !important;
+  font-size: 1.3rem;
+  margin: 0.5rem 0;
+}
+///extend
+.sp-thongbao {
+  margin: 1rem 0;
+  font-size: 1.4rem;
+  color: $color-pink;
+}
+.icon-socials {
+  position: absolute;
+  top: 0.7em;
+  left: 1em;
+  font-size: 1.5rem;
+  color: $color-pink;
+}
+
+@include responsive("large") {
+  .coures-item {
+    flex-direction: column;
+  }
+  .modal-body {
+    width: 100%;
+    form {
+      width: 100% !important;
+    }
+  }
+
+  .modal-body {
+    z-index: 1;
+    h2 {
+      text-align: start;
+    }
+  }
+  footer {
+    .footer-group {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+  }
+}
+@include responsive("small") {
+  .card-style {
+    margin-top: 2rem !important;
+  }
+}

@@ -1,0 +1,126 @@
+.img-accent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  // width: 100%;
+  img {
+    object-fit: cover;
+    width: 100%;
+  }
+}
+.img-footer {
+  position: absolute;
+  top: 19rem;
+  left: 0;
+  right: 0;
+  img {
+    object-fit: cover;
+    width: 100%;
+  }
+}
+.img-contact {
+  z-index: 2;
+}
+footer {
+  background: #a91d7e;
+  padding-top: 10rem;
+
+  .footer-group {
+    position: relative;
+    z-index: 1111;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 2rem;
+    .contact-us {
+      h1 {
+        @include styleText(3rem, $fw-4, $color-white);
+        margin-bottom: 4rem;
+      }
+      .contact-info {
+        a {
+          font-size: $fs-1;
+          text-decoration: none;
+          color: $color-white;
+          line-height: 2rem;
+          margin-bottom: 2rem;
+          span {
+            text-transform: capitalize;
+            padding-left: 1rem;
+          }
+        }
+      }
+      .socials {
+        display: flex;
+        gap: 2rem;
+
+        a {
+          text-decoration: none;
+          @include styleText($fs-2, $fw-2, $color-white);
+          transition: all 0.2s;
+          cursor: pointer;
+          &:hover {
+            @include styleText($fs-2, $fw-2, $color-1);
+          }
+        }
+      }
+    }
+
+    .quicklinks {
+      h1 {
+        @include styleText(3rem, $fw-4, $color-white);
+        margin-bottom: 4rem;
+      }
+      a {
+        font-size: $fs-1;
+        text-decoration: none;
+        color: $color-white;
+        line-height: 3rem;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid #981971;
+        span {
+          text-transform: capitalize;
+        }
+      }
+    }
+    .about {
+      @extend .quicklinks;
+    }
+    .newsletter {
+      h1 {
+        @include styleText(3rem, $fw-4, $color-white);
+        margin-bottom: 4rem;
+      }
+      button {
+        width: 100%;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
+
+@include responsive("extra-large") {
+  .img-contact {
+    // position: relative;
+    display: flex;
+    justify-content: flex-end;
+    img {
+      object-fit: cover;
+      width: 80%;
+    }
+  }
+  .img-footer {
+    top: 26rem;
+  }
+}
+@include responsive("large") {
+  .img-footer {
+    top: 62rem;
+  }
+}
+@include responsive("small") {
+  .img-footer {
+    top: 62rem;
+  }
+}

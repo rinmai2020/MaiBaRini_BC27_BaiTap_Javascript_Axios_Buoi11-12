@@ -1,0 +1,68 @@
+.img-violet {
+  img {
+    object-fit: cover;
+    width: 100%;
+  }
+}
+.carousel {
+  .carousel-item {
+    margin: 10rem 0 0 0;
+    display: flex;
+    align-items: center;
+    .carousel-infor {
+      display: flex;
+      flex-direction: column;
+      width: 60rem;
+
+      h6 {
+        @include styleText($fs-3, $fw-3, $color-pink);
+      }
+      h1 {
+        @include styleText($fs-6, $fw-4, $color-1);
+      }
+    }
+  }
+
+  //responsive
+}
+@include responsive("small") {
+  .carousel {
+    margin-top: 3rem;
+    .carousel-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .img-hero {
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@include responsive("extra-large") {
+  // .img-yellow {
+  //   width: 80rem;
+  // }
+  .carousel {
+    margin-top: 6rem;
+    padding: 0 2rem;
+    .carousel-item {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      // justify-content: center;
+      .carousel-infor {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        h6 {
+          @include styleText($fs-3, $fw-3, $color-pink);
+        }
+        h1 {
+          @include styleText(5.3rem, $fw-3, $color-1);
+        }
+      }
+    }
+  }
+}

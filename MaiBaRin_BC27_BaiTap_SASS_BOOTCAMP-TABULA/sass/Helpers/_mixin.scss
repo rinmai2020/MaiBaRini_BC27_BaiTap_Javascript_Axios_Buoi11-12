@@ -1,0 +1,61 @@
+@mixin styleText($fs, $fw, $color) {
+  font-size: $fs;
+  font-weight: $fw;
+  color: $color;
+}
+//button pink
+@mixin styleButton($pd-x, $pd-y, $fs, $border-radius, $color, $fw) {
+  font-size: $fs;
+  padding: $pd-y $pd-x;
+  border-radius: $border-radius;
+  color: $color;
+  font-weight: $fw;
+}
+//button white
+@mixin styleButtonWhite($pd-x, $pd-y, $fs, $border-radius, $color, $fw) {
+  font-size: $fs;
+  padding: $pd-y $pd-x;
+  border-radius: $border-radius;
+  color: $color;
+  font-weight: $fw;
+}
+@mixin postionGroup($position) {
+  position: $position;
+}
+@mixin styleButtonHover($color) {
+  color: $color;
+}
+// @mixin h1($fs, $color, $fw) {
+//   font-size: $fs;
+//   font-weight: $fw;
+//   color: $color;
+// }
+.container {
+  max-width: 120rem;
+}
+@mixin responsive($screen) {
+  @if (map-has-key($map: $breakpoints, $key: $screen)) {
+    $value: map-get(
+      $map: $breakpoints,
+      $key: $screen,
+    );
+    @media screen and (max-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn "màn hình chưa khai báo";
+  }
+}
+@mixin responsive2($screen) {
+  @if (map-has-key($map: $breakpoints, $key: $screen)) {
+    $value: map-get(
+      $map: $breakpoints,
+      $key: $screen,
+    );
+    @media screen and (min-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn "màn hình chưa khai báo";
+  }
+}

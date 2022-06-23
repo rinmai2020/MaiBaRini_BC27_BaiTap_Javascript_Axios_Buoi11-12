@@ -1,0 +1,59 @@
+//Color
+$color-pink: #b61984;
+$color-1: #191919;
+$color-2: #181818;
+$color-white: #ffffff;
+$color-lavender: #dcd1f3;
+
+//Font size
+$fs-1: 1.3rem;
+$fs-2: 1.5rem;
+$fs-3: 2rem;
+$fs-4: 3.6rem;
+$fs-5: 4.2rem;
+$fs-6: 6rem;
+
+//Font weight
+$fw-1: 400;
+$fw-2: 500;
+$fw-3: 600;
+$fw-4: 700;
+
+//letter spacing
+$ls-1: 0.075rem;
+$ls-2: 0.3rem;
+
+//padding:
+$pd-0: 0;
+$pd-1: 0.25rem;
+$pd-2: 0.5rem;
+$pd-3: 1rem;
+$pd-4: 1.5rem;
+$pd-5: 3rem;
+$pd-6: 4rem;
+$pd-7: 5rem;
+
+//margin
+$mg-0: 0rem;
+$mg-1: 0.25rem;
+$mg-2: 0.5rem;
+$mg-3: 1rem;
+$mg-4: 1.5rem;
+$mg-5: 3rem;
+
+//Position
+$ps-relative: relative;
+$ps-absolute: absolute;
+$ps-fixed: fixed;
+
+//Breakpoints
+$breakpoints: (
+  "extra-large": 1200px,
+  "large": 992px,
+  "medium": 768px,
+  "small": 576px,
+  "extra-large-down": 1199.98px,
+  "large-down": 991.98px,
+  "medium-down": 767.98px,
+  "small-down": 575.98px,
+);

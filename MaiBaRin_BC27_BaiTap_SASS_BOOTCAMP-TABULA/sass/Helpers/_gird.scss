@@ -1,0 +1,7 @@
+$column-max: 12;
+@for $i from 1 through $column-max {
+  .col-#{$i} {
+    width: (100% * $i) / $column-max;
+    float: left;
+  }
+}

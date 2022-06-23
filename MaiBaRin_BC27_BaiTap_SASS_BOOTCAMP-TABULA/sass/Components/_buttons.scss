@@ -1,0 +1,27 @@
+.contact-socials {
+    button {
+        @include styleButton($pd-4, $pd-3 + 0.25, 1.2rem, 50rem, $color-white, $fw-1);
+        transition: all 0.3s;
+        box-shadow: 0 0 0 10rem $color-pink inset;
+        border: none;
+        outline: none;
+        &:hover {
+            @include styleButtonHover($color-pink);
+            box-shadow: 0 0 0 0.15rem $color-pink inset;
+        }
+    }
+}
+.contact-socials-white {
+    button {
+        @include styleButton($pd-4, $pd-3 + 0.25, 1.2rem, 50rem, $color-2, $fw-1);
+        transition: all 0.3s;
+        box-shadow: 0 0 0 10rem $color-white inset;
+        border: none;
+        outline: none;
+        &:hover {
+            @include styleButtonHover($color-white);
+            background: transparent;
+            box-shadow: 0 0 0 0.15rem $color-white inset;
+        }
+    }
+}
