@@ -1,22 +1,28 @@
 function $(x) {
   return document.getElementById(x);
 }
-//validator======
-
 function validation() {
   var valid = true;
-  // B1 : DOM lấy value từ inout
+  //Tài khoản
   var account = $("TaiKhoan").value;
   var errorAccount = $("tbTaiKhoan");
-  var regexAcccount = /^(?=.*[A-Za-z0-9]$)[A-Za-z][A-Za-z\d.-]{0,19}$/;
-  if (!isRequired(account)) {
-    valid = false;
-    errorAccount.innerHTML = "Tài khoản không được để trống";
-  } else if (!regexAcccount.test(account)) {
-    valid = false;
-    errorAccount.innerHTML = "Tài khoản không hợp lệ";
-  } else {
-    errorAccount.innerHTML = "";
+  btnEdit = "edit";
+  if (btnEdit === "edit") {
+    var valid = true;
+    var errorAccount = $("tbTaiKhoan");
+    apiaddUsers().then(function (result) {
+      // Tạo biến users nhận kết quả trả về từ API
+      users = result.data;
+    });
+    if (!isRequired(account)) {
+      valid = false;
+      errorAccount.innerHTML = "Tài khoản không được để trống";
+    } else if (account === users.account) {
+      valid = true;
+      errorAccount.innerHTML = "";
+    } else {
+      errorAccount.innerHTML = "";
+    }
   }
   //FullName
   var fullName = $("HoTen").value;
@@ -146,4 +152,17 @@ function length(value, max, min) {
     return false;
   }
   return true;
+}
+//check account
+function checkAccount(value, id) {
+  var valid = true;
+
+  for (var i = 0; i < users.length; i++) {
+    var user = users[i];
+    if (value === user.account) {
+      valid = false;
+      break;
+    }
+  }
+  return valid;
 }

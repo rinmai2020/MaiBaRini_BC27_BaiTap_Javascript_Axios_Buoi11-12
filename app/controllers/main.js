@@ -1,10 +1,11 @@
 //Call API lấy danh sách
 // Hàm main sẽ được chay khi ứng dụng được khởi tạo
+var users = [];
 main();
 function main() {
   // B1: Goi API lấy danh sách
   apiaddUsers().then(function (result) {
-    var users = result.data;
+    users = result.data;
     for (var i = 0; i < users.length; i++) {
       var user = users[i];
       users[i] = new User(
@@ -95,7 +96,10 @@ function handleSubmitFooter(e) {
       break;
   }
 }
+//Tạo bien edit rong
+var btnEdit = "";
 function addUser() {
+  btnEdit = "add";
   //B1:DOM value
   var account = document.getElementById("TaiKhoan").value;
   var fullName = document.getElementById("HoTen").value;
@@ -121,6 +125,13 @@ function addUser() {
     description,
     languages
   );
+  //btn Edit
+  if (btnEdit === "add") {
+    var valid = validation();
+    if (!valid) {
+      return;
+    }
+  }
   apiAddUser(user)
     .then(function (result) {
       main();
@@ -247,6 +258,7 @@ function showUpdateModal(userId) {
     .catch(function (error) {
       console.log(error);
     });
+  document.getElementById("TaiKhoan").disabled = true;
 }
 //search
 document.getElementById("txtSearch").addEventListener("keypress", handleSearch);
@@ -255,7 +267,7 @@ function handleSearch(evt) {
   if (evt.key !== "Enter") return;
   var value = evt.target.value;
   apiaddUsers(value).then(function (result) {
-    var users = result.data;
+    users = result.data;
     for (var i = 0; i < users.length; i++) {
       var user = users[i];
       users[i] = new User(
