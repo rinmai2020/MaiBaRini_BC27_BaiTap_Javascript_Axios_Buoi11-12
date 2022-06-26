@@ -4,7 +4,7 @@ var users = [];
 main();
 function main() {
   // B1: Goi API lấy danh sách
-  apiaddUsers().then(function (result) {
+  apiGetUsers().then(function (result) {
     users = result.data;
     for (var i = 0; i < users.length; i++) {
       var user = users[i];
@@ -266,7 +266,7 @@ function handleSearch(evt) {
   console.log(evt);
   if (evt.key !== "Enter") return;
   var value = evt.target.value;
-  apiaddUsers(value).then(function (result) {
+  apiGetUsers(value).then(function (result) {
     users = result.data;
     for (var i = 0; i < users.length; i++) {
       var user = users[i];

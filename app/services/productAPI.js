@@ -1,7 +1,7 @@
 var baseUrl = "https://62a42428259aba8e10e2f93f.mockapi.io/api/userManagers";
 
 // Hàm call API lấy danh sách sản phẩm
-function apiaddUsers(search) {
+function apiGetUsers(search) {
   return axios({
     url: baseUrl,
     method: "GET",

@@ -10,7 +10,7 @@ function validation() {
   if (btnEdit === "edit") {
     var valid = true;
     var errorAccount = $("tbTaiKhoan");
-    apiaddUsers().then(function (result) {
+    apiGetUsers().then(function (result) {
       // Tạo biến users nhận kết quả trả về từ API
       users = result.data;
     });

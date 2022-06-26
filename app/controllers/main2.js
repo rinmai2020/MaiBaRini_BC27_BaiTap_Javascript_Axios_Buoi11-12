@@ -3,7 +3,7 @@
 main();
 function main() {
   // B1: Goi API lấy danh sách
-  apiaddUsers().then(function (result) {
+  apiGetUsers().then(function (result) {
     var users = result.data;
     var html = "";
     for (var i = 0; i < users.length; i++) {
